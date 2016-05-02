@@ -256,6 +256,7 @@
             "storageAccountNewOrExisting": "[steps('infrastructureConfig').storageAccount.newOrExisting]",
             "storageAccountName": "[steps('infrastructureConfig').storageAccount.name]",
             "storageAccountType": "[steps('infrastructureConfig').storageAccount.type]",
+			"ubuntuOSVersion": "[steps('infrastructureConfig').ubuntuOSVersion]",
             "existingStorageAccountRG": "[steps('infrastructureConfig').storageAccount.resourceGroup]",
             "vmSize": "[steps('infrastructureConfig').vmSize]",
             "instanceCount": "[steps('infrastructureConfig').vmCount]",
@@ -268,4 +269,3 @@
         }
     }
 }
-
