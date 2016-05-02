@@ -1,5 +1,4 @@
-{
-    "handler": "Microsoft.Compute.MultiVm",
+ndler": "Microsoft.Compute.MultiVm",
     "version": "0.0.1-preview",
     "parameters": {
         "basics": [
@@ -262,10 +261,10 @@
 
             "publicIPAddressName": "[steps('infrastructureConfig').dnsAndPublicIP.name]",
             "dnsPrefix": "[steps('infrastructureConfig').dnsAndPublicIP.domainNameLabel]",
-            "existingIPRGName": "[steps('infrastructureConfig').dnsAndPublicIP.resourceGroup]",
             "publicIPNewOrExisting": "[steps('infrastructureConfig').dnsAndPublicIP.newOrExistingOrNone]",
 
             "location": "[location()]"
         }
     }
 }
+
