@@ -375,7 +375,7 @@
       "typeHandlerVersion": "1.4",
       "settings": {
         "fileUris": "[variables('bootstrapFiles')]",
-        "commandToExecute": "[concat('sh bootstrap_hazelcast ', parameters('clusterUserName'), ' ', parameters('clusterPassword'), ' ', subscription().subscriptionId, ' ', resourceGroup().name )]"
+        "commandToExecute": "[concat('sh bootstrap_hazelcast ', parameters('clusterUserName'), ' ', parameters('clusterPassword'), ' ', parameters('clusterVersion'), ' ', parameters('instanceCount'), ' ', subscription().subscriptionId, ' ', resourceGroup().name )]"
       }
     },
     "copy": {

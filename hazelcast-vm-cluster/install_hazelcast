@@ -1,10 +1,18 @@
 #! /bin/bash
 MIN_HEAP_SIZE=$1
 MAX_HEAP_SIZE=$2
+CLUSTER_VERSION=$3
+
 sudo apt-get update -y
 sudo apt-get install default-jdk -y
 sudo apt-get install maven2 -y
 sudo mvn install
+
+#### version of hazelcast
+if [ "x$CLUSTER_VERSION" = "x" ]
+ then
+   CLUSTER_VERSION="3.6.2"
+fi
 
 #### minimum heap size
 if [ "x$MIN_HEAP_SIZE" = "x" ]
@@ -24,6 +32,7 @@ if [ "x$MAX_HEAP_SIZE" != "x" ]; then
 fi
 # persist this variable to the VM environment
 sudo sh -c 'echo "JAVA_OPTIONS=$JAVA_OPTS" >> /etc/environment'
+sudo sh -c 'echo "CLUSTER_VERSION=$CLUSTER_VERSION" >> /etc/environment'
 
 # create the hazelcast home directory
 sudo mkdir /var/hazelcast
