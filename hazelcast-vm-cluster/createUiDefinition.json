@@ -89,7 +89,7 @@ ndler": "Microsoft.Compute.MultiVm",
                 },
                 "options": {
                   "multiple": false,
-                  "uploadMode": "file",
+                  "uploadMode": "url",
                   "openMode": "binary",
                   "encoding": "UTF-8"
         
