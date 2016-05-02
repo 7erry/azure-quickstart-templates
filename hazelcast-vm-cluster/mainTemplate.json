@@ -124,15 +124,12 @@
         "destription": ""
       }
     },
-		"publicIPAddressName": {
-		"type": "string"
-	},
-		"existingIPRGName": {
-		"type": "string"
-	},
-		"publicIPNewOrExisting": {
-		"type": "string"
-	},
+    "publicIPAddressName": {
+	"type": "string"
+    },
+    "publicIPNewOrExisting": {
+	"type": "string"
+    },
     "location": {
       "type": "string",
       "defaultValue": "",
