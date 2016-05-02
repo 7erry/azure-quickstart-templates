@@ -1,7 +1,7 @@
 <hazelcast xmlns="http://www.hazelcast.com/schema/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="hazelcast-consul-discovery" xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.6.xsd">
     <group>
-        <name>hzcluster</name>
-        <password>hz123123</password>
+        <name>dev</name>
+        <password>dev-pass</password>
     </group>
     <properties>
         <property name="hazelcast.discovery.enabled">true</property>
