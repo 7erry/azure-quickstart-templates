@@ -6,9 +6,11 @@ MAX_HEAP_SIZE=`free | grep Mem | awk '{ printf($2/1000000) }'`
 CLUSTER_NAME=$1
 CLUSTER_PASSWORD=$2
 CLUSTER_VERSION=$3
-CLUSTER_SIZE=$4
-SUBSCRIPTION_ID=$5
-RESOURCE_GROUP=$6
+export CLUSTER_VERSION
+export CLUSTER_SIZE=$4
+export SUBSCRIPTION_ID=$5
+export RESOURCE_GROUP=$6
+sh -c 'echo "CLUSTER_VERSION=$CLUSTER_VERSION" >> /etc/environment'
 chmod +x install_hazelcast
 chmod +x modify_configuration
 ./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml
