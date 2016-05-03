@@ -193,7 +193,8 @@
       "[concat(parameters('templateBaseUrl'), 'install_hazelcast')]",
       "[concat(parameters('templateBaseUrl'), 'logging.properties')]",
       "[concat(parameters('templateBaseUrl'), 'modify_configuration')]",
-      "[concat(parameters('templateBaseUrl'), 'pom.xml')]"
+      "[concat(parameters('templateBaseUrl'), 'pom.xml')]",
+      "[parameters('customJar')]"
     ]
   },
   "resources": [{
@@ -372,7 +373,7 @@
       "typeHandlerVersion": "1.4",
       "settings": {
         "fileUris": "[variables('bootstrapFiles')]",
-        "commandToExecute": "[concat('sh bootstrap_hazelcast ', parameters('clusterUserName'), ' ', parameters('clusterPassword'), ' ', parameters('clusterVersion'), ' ', parameters('instanceCount'), ' ', subscription().subscriptionId, ' ', resourceGroup().name )]"
+        "commandToExecute": "[concat('sh bootstrap_hazelcast ', parameters('clusterUserName'), ' ', parameters('clusterPassword'), ' ', parameters('clusterVersion'), ' ', parameters('instanceCount'), ' ', parameters('customJar'), ' ',subscription().subscriptionId, ' ', resourceGroup().name )]"
       }
     },
     "copy": {
