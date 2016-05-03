@@ -1,10 +1,8 @@
 #! /bin/bash
 # Provided by azure extension which comes from template parameters
 # use free to determine min/max heap sizes / setting min and max to the same
-#MIN_HEAP_SIZE=`free | grep Mem | awk '{ printf(($2/1000000)*.20) }'`
-MIN_HEAP_SIZE=.5
-#MAX_HEAP_SIZE=`free | grep Mem | awk '{ printf($2/1000000) }'`
-MAX_HEAP_SIZE=3
+MIN_HEAP_SIZE=`free | grep Mem | awk '{ printf(($2/1000000)*.20) }'`
+MAX_HEAP_SIZE=`free | grep Mem | awk '{ printf($2/1000000) }'`
 CLUSTER_NAME=$1
 CLUSTER_PASSWORD=$2
 CLUSTER_VERSION=$3
