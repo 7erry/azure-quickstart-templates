@@ -15,6 +15,8 @@ CLUSTER_SIZE=$4
 CUSTOM_JAR=$5
 SUBSCRIPTION_ID=$6
 RESOURCE_GROUP=$7
+
+wget $CUSTOM_JAR
 chmod +x install_hazelcast
 chmod +x modify_configuration
 ./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml

@@ -193,8 +193,7 @@
       "[concat(parameters('templateBaseUrl'), 'install_hazelcast')]",
       "[concat(parameters('templateBaseUrl'), 'logging.properties')]",
       "[concat(parameters('templateBaseUrl'), 'modify_configuration')]",
-      "[concat(parameters('templateBaseUrl'), 'pom.xml')]",
-      "[parameters('customJar')]"
+      "[concat(parameters('templateBaseUrl'), 'pom.xml')]"
     ]
   },
   "resources": [{
