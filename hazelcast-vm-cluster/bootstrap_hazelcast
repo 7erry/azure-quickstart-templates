@@ -19,5 +19,5 @@ chmod +x install_hazelcast
 chmod +x modify_configuration
 ./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml
 ./install_hazelcast $MIN_HEAP_SIZE $MAX_HEAP_SIZE $CLUSTER_VERSION
-sudo cp ./hazelcast-server.conf /etc/init/
-sudo service hazelcast-server start
+cp ./hazelcast-server.conf /etc/init/
+service hazelcast-server start
