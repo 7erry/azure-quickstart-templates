@@ -147,8 +147,8 @@
 					  "toolTip": "Please specify the password for the Hazelcast cluster.",
 					  "constraints": {
 					    "required": true,
-					    "regex": "",
-					    "validationMessage": ""
+						"regex": "^[a-z0-9]{3,24}$",
+						"validationMessage": "Cluster password must be between 3 and 24 characters long, and can contain only numbers and lowercase letters."
 					  },
 					  "options": {
 					    "hideConfirmation": false

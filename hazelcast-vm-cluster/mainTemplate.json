@@ -139,7 +139,7 @@
     },
     "templateBaseUrl": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/7erry/azure-quickstart-templates/tree/master/hazelcast-vm-cluster",
+      "defaultValue": "https://raw.githubusercontent.com/7erry/azure-quickstart-templates/master/hazelcast-vm-cluster/",
       "metadata": {
         "description": "The base URL for the bootstrap files",
 		"artifactsBaseUrl": "Base URL to be replaced by marketplace storage."
