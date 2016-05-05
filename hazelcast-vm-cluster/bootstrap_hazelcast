@@ -10,16 +10,18 @@ CLUSTER_PASSWORD=$2
 CLUSTER_VERSION=$3
 export CLUSTER_VERSION
 sh -c 'echo "CLUSTER_VERSION=$CLUSTER_VERSION" >> /etc/environment'
+# set cluster version in pom file
+sed -i -- 's/${env.CLUSTER_VERSION}/3.6.2/g' pom.xml
 
 CLUSTER_SIZE=$4
 CUSTOM_JAR=$5
 SUBSCRIPTION_ID=$6
-RESOURCE_GROUP=$7
 
 wget $CUSTOM_JAR
 chmod +x install_hazelcast
 chmod +x modify_configuration
-./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml
+#./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml
+./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --filename=hazelcast.xml
 ./install_hazelcast $MIN_HEAP_SIZE $MAX_HEAP_SIZE $CLUSTER_VERSION
 cp ./hazelcast-server.conf /etc/init/
 service hazelcast-server start
