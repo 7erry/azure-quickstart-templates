@@ -2,7 +2,12 @@
 # Provided by azure extension which comes from template parameters
 # use free to determine min/max heap sizes / setting min and max to the same
 MIN_HEAP_SIZE=`free | grep Mem | awk '{ printf(($2/1000000)*.20) }'`
+export MIN_HEAP_SIZE
+sh -c 'echo "MIN_HEAP_SIZE=$MIN_HEAP_SIZE" >> /etc/environment'
 MAX_HEAP_SIZE=`free | grep Mem | awk '{ printf($2/1000000) }'`
+export MAX_HEAP_SIZE
+sh -c 'echo "MAX_HEAP_SIZE=$MAX_HEAP_SIZE" >> /etc/environment'
+
 CLUSTER_NAME=$1
 CLUSTER_PASSWORD=$2
 
@@ -17,7 +22,12 @@ CLUSTER_SIZE=$4
 CUSTOM_JAR=$5
 SUBSCRIPTION_ID=$6
 
-wget $CUSTOM_JAR
+#### check if custom_jar was provided
+if [ "x$CUSTOM_JAR" != "x" ]
+ then
+   wget $CUSTOM_JAR
+fi
+
 chmod +x install_hazelcast
 chmod +x modify_configuration
 #./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --subscription-id=$SUBSCRIPTION_ID --filename=hazelcast.xml
