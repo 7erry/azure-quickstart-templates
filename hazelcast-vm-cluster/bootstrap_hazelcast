@@ -37,6 +37,7 @@ fi
 if [ "x$MAX_HEAP_SIZE" != "x" ]; then
   JAVA_OPTS="$JAVA_OPTS -Xms${MAX_HEAP_SIZE}"
 fi
+export JAVA_OPTS
 # persist this variable to the VM environment
 sh -c 'echo "JAVA_OPTIONS=$JAVA_OPTS" >> /etc/environment'
 
@@ -44,15 +45,19 @@ CLUSTER_SIZE=$4
 CUSTOM_JAR=$5
 SUBSCRIPTION_ID=$6
 
-#### check if custom_jar was provided
-if [ "x$CUSTOM_JAR" != "x" ]
- then
-   wget $CUSTOM_JAR
-fi
-
 chmod +x install_hazelcast
 chmod +x modify_configuration
 ./modify_configuration --cluster-name=$CLUSTER_NAME --cluster-password=$CLUSTER_PASSWORD --cluster-version=$CLUSTER_VERSION --cluster-size=$CLUSTER_SIZE --filename=hazelcast.xml
 ./install_hazelcast $MIN_HEAP_SIZE $MAX_HEAP_SIZE $CLUSTER_VERSION
+
+#### check if custom_jar was provided and add it to the classpath
+if [ "x$CUSTOM_JAR" != "x" ]
+ then
+   wget $CUSTOM_JAR -O /var/hazelcast/custom.jar
+   CLASSPATH=/var/hazelcast/custom.jar
+   export CLASSPATH
+   sh -c 'echo "CLASSPATH=$CLASSPATH" >> /etc/environment'
+fi
+
 cp ./hazelcast-server.conf /etc/init/
 service hazelcast-server start
