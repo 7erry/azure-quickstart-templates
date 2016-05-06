@@ -39,6 +39,7 @@
     },
     "customJar": {
       "type": "string",
+	  "defaultValue": "",
       "metadata": {
 	"description": "Customer provided jar file."
       }
