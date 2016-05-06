@@ -32,10 +32,10 @@ export MAX_HEAP_SIZE
 sh -c 'echo "MAX_HEAP_SIZE=$MAX_HEAP_SIZE" >> /etc/environment'
 
 if [ "x$MIN_HEAP_SIZE" != "x" ]; then
-  JAVA_OPTS="$JAVA_OPTS -Xms${MIN_HEAP_SIZE}"
+  JAVA_OPTS="$JAVA_OPTS -Xms${MIN_HEAP_SIZE}g"
 fi
 if [ "x$MAX_HEAP_SIZE" != "x" ]; then
-  JAVA_OPTS="$JAVA_OPTS -Xms${MAX_HEAP_SIZE}"
+  JAVA_OPTS="$JAVA_OPTS -Xms${MAX_HEAP_SIZE}g"
 fi
 export JAVA_OPTS
 # persist this variable to the VM environment
