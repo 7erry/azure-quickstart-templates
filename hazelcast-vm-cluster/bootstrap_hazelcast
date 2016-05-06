@@ -16,11 +16,11 @@ sed -i -- 's/${env.CLUSTER_VERSION}/3.6.2/g' pom.xml
 
 #### minimum heap size
 MIN_HEAP_SIZE=`free | grep Mem | awk '{ printf(($2/1000000)*.20) }'`
-export MIN_HEAP_SIZE
 if [ "x$MIN_HEAP_SIZE" = "x" ]
  then
    MIN_HEAP_SIZE=4G
 fi
+export MIN_HEAP_SIZE
 sh -c 'echo "MIN_HEAP_SIZE=$MIN_HEAP_SIZE" >> /etc/environment'
 
 MAX_HEAP_SIZE=`free | grep Mem | awk '{ printf($2/1000000) }'`

@@ -18,7 +18,6 @@ if __name__ == "__main__":
     parser.add_option("-p","--cluster-password",dest="cluster_password")
     parser.add_option("-v","--cluster-version",dest="cluster_version")
     parser.add_option("-z","--cluster-size",dest="cluster_size")
-    parser.add_option("-s","--subscription-id",dest="subscription_id")
 
     parser.add_option("-f","--filename",dest="filename")
     if len(sys.argv) > 0:
