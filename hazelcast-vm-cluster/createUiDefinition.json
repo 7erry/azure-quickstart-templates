@@ -85,8 +85,7 @@
                 "toolTip": "",
                 "constraints": {
                   "required": false,
-                  "accept": ".jar",
-		  		  "validationMessage": "Please select a customer provided jar file to be added to each servers classpath."
+                  "accept": ".jar"
                 },
                 "options": {
                   "multiple": false,
