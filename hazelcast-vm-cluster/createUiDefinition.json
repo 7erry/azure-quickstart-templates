@@ -86,8 +86,7 @@
                 "constraints": {
                   "required": false,
                   "accept": ".jar",
-		  "regex": "",
-		  "validationMessage": "Please select a customer provided jar file to be added to each servers classpath."
+		  		  "validationMessage": "Please select a customer provided jar file to be added to each servers classpath."
                 },
                 "options": {
                   "multiple": false,
@@ -162,9 +161,9 @@
                         "defaultValue": {
                             "type": "Standard_LRS"
                         },
-                	"constraints": {
-               		   "required": true
-                	}
+                		"constraints": {
+               		   	 "required": true
+                		},
                     },
                     {
                         "name": "ubuntuOSVersion",
@@ -235,9 +234,9 @@
                         "toolTip": {
                             "domainNameLabel": "DNS Prefix for the VM public IP addresses."
                         },
-                	"constraints": {
-               		   "required": true
-                	},
+                		"constraints": {
+               		   	 "required": true
+                		},
                         "defaultValue": {
                             "publicIpAddressName": "hazelcast",
                             "domainNameLabel": ""
