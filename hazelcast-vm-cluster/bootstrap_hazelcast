@@ -42,7 +42,7 @@ export JAVA_OPTS
 sh -c 'echo "JAVA_OPTIONS=$JAVA_OPTS" >> /etc/environment'
 
 CLUSTER_SIZE=$4
-CUSTOM_JAR=$5
+CUSTOM_JAR='$5'
 SUBSCRIPTION_ID=$6
 
 chmod +x install_hazelcast
