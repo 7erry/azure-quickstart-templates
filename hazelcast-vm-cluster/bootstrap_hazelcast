@@ -53,6 +53,7 @@ chmod +x modify_configuration
 #### check if custom_jar was provided and add it to the classpath
 if [ "x$CUSTOM_JAR" != "x" ]
  then
+   mkdir /var/hazelcast
    wget $CUSTOM_JAR -O /var/hazelcast/custom.jar
    CLASSPATH=/var/hazelcast/custom.jar
    export CLASSPATH
