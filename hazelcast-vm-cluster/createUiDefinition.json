@@ -1,4 +1,4 @@
-
+{
     "handler": "Microsoft.Compute.MultiVm",
     "version": "0.0.1-preview",
     "parameters": {
@@ -48,9 +48,9 @@
                 "type": "Microsoft.Compute.TextBox",
                 "label": "License",
                 "toolTip": "Optional License Key if Enterprise or High Density is to be installed.",
-		"constraints": {
-		  "required": false
-		}
+		        "constraints": {
+		          "required": false
+		        },
                 "osPlatform": "Linux"
             },
             {
@@ -176,7 +176,7 @@
                         },
                 		"constraints": {
                		   	 "required": true
-                		},
+                		}
                     },
                     {
                         "name": "ubuntuOSVersion",
@@ -267,6 +267,7 @@
             "adminPassword": "[basics('SSHCredntials').password]",
             "sshPublicKey": "[basics('SSHCredntials').sshPublicKey]",
 
+            "licenseKey": "[steps('infrastructureConfig').licenseKey]",
             "clusterUserName": "[steps('infrastructureConfig').clusterUserName]",
             "clusterPassword": "[steps('infrastructureConfig').clusterPassword]",
             "clusterVersion": "[steps('infrastructureConfig').clusterVersion]",
