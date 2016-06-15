@@ -11,8 +11,6 @@ CLUSTER_PASSWORD=$2
 CLUSTER_VERSION=$3
 export CLUSTER_VERSION
 sh -c 'echo "CLUSTER_VERSION=$CLUSTER_VERSION" >> /etc/environment'
-# set cluster version in pom file
-#sed -i -- 's/${env.CLUSTER_VERSION}/$CLUSTER_VERSION/g' pom.xml
 
 #### minimum heap size
 MIN_HEAP_SIZE=`free | grep Mem | awk '{ printf(($2/1000000)*.20) }'`
