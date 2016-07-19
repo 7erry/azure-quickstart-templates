@@ -196,9 +196,10 @@
       "name": "[variables('newStorageAccountName')]",
       "apiVersion": "[variables('StorageapiVersion')]",
       "location": "[parameters('location')]",
-      "properties": {
-        "accountType": "[variables('storageAccountType')]"
-      }
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      },
+      "kind": "Storage"
     },
     {
       "apiVersion": "[variables('NetworkapiVersion')]",
