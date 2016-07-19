@@ -24,7 +24,7 @@
     "authenticationType": {
       "type": "string",
       "metadata": {
-        "description": "Authenitcation method for logging into Hazelcast VMs."
+        "description": "Authentication method for logging into Hazelcast VMs."
       },
       "allowedValues": [
         "password",

@@ -178,10 +178,7 @@
                         },
                         "constraints": {
                             "required": true,
-                            "allowedTypes": [],
-                            "excludedTypes": [
-                                "Premium_LRS"
-                            ]
+                            "allowedTypes": ["Standard_LRS", "Standard_GRS", "Standard_RAGRS"]
                         }
                     },
                     {
