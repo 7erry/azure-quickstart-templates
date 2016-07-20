@@ -196,25 +196,25 @@
                         "toolTip": "",
                         "defaultValue": "14.04.2-LTS",
                         "constraints": {
-                            "allowedValues": [
+                        "allowedValues": [
                                 {
                                     "label": "14.04.2-LTS",
                                     "value": "14.04.2-LTS"
                                 },
                                 {
-                                    "label": "14.04-DAILY",
-                                    "value": "14.04-DAILY"
+                                    "label": "14.04.4-LTS",
+                                    "value": "14.04.4-LTS"
                                 },
                                 {
                                     "label": "15.10",
                                     "value": "15.10"
                                 },
                                 {
-                                    "label": "16.04-LTS",
-                                    "value": "16.04-LTS"
+                                    "label": "16.04.0-LTS",
+                                    "value": "16.04.0-LTS"
                                 }
                             ]
-                        }
+			}
                     },
                     {
                         "name": "vmSize",
