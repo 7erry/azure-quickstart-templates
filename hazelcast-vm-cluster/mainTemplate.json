@@ -10,6 +10,7 @@
     },
     "adminPassword": {
       "type": "securestring",
+      "defaultValue": "",
       "metadata": {
         "description": "Password for hazelcast VMs, if authenticationType is set to 'password'"
       }
