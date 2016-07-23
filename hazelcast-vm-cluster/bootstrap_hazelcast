@@ -7,7 +7,8 @@
 CLUSTER_NAME=$1
 CLUSTER_PASSWORD=$2
 
-# used by maven to pull the hazelcast binary
+# used by maven to pull the hazelcast binary;however, services ignore environemnt variables.
+sed -i 's/${env.CLUSTER_VERSION}/'"$3"'/g' pom.xml
 CLUSTER_VERSION=$3
 export CLUSTER_VERSION
 sh -c 'echo "CLUSTER_VERSION=$CLUSTER_VERSION" >> /etc/environment'
