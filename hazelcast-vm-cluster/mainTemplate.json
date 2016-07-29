@@ -170,7 +170,7 @@
           "publicKeys": [
             {
               "keyData": "[parameters('sshPublicKey')]",
-	      "path": [concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]
+	      "path": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]"
             }
           ]
         }
