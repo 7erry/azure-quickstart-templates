@@ -3,7 +3,7 @@
 #assumes root/sudo user
 apt-get update -y
 apt-get install default-jdk -y
-apt-get install maven2 -y
+apt-get install maven -y
 mvn install
 
 #/var/hazelcast is created in bootstrap
