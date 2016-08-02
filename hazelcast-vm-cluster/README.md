@@ -20,7 +20,7 @@ Getting started with Hazlecast on Microsift Azure is as simple as four steps:
 
 1. Basics
 
-
+![Basics step](img.png)
 
 Username:	This will be the username used to login to the virtual machine
 Authentication type:	Type of authentication can be SSH Public Key or Password
