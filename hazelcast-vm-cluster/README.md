@@ -18,43 +18,61 @@ Hazelcast on Microsoft Azure Quick Start Guide
 
 Getting started with Hazlecast on Microsift Azure is as simple as four steps:
 
-1. Basics
+### 1. Basics
 
-![Basics step](img.png)
+![Basics step](images/step1.png)
 
 Username:	This will be the username used to login to the virtual machine
-Authentication type:	Type of authentication can be SSH Public Key or Password
-Password:	The password used to login to the virtual machine
-SSH Public Key:	The ssh key used to login to the virtual machine
-Subscription:	Which subscription used to purchase the resources
-Resource group:	The resource group that will store all created resources
-Location:	The region that will host all created resources
-2. Infrastructure
 
+Authentication type:	Type of authentication can be SSH Public Key or Password
+
+Password:	The password used to login to the virtual machine
+
+SSH Public Key:	The ssh key used to login to the virtual machine
+
+Subscription:	Which subscription used to purchase the resources
+
+Resource group:	The resource group that will store all created resources
+
+Location:	The region that will host all created resources
+
+### 2. Infrastructure
+
+![Infrastructure step](images/step2.png)
 
 
 Version of Hazelcast:	Which version of Hazelcast Grid to be installed
+
 Custom Jar upload:	A custom jar to be added to each virtual machine classpath
+
 Hazelcast user name:	The username to be used to login to Hazelcast Grid
+
 Hazelcast password:	The password to be used to login to Hazelcast Grid
+
 Storage account:	The storage account used for all resource storage needs
+
 Ubuntu version:	The version of Ubuntu to be installed
+
 Virtual machine size:	The size of each virtual machine for the Hazelcast Grid
-3. Summary
+
+### 3. Summary
+
+![Summary step](images/step3.png)
 
 
 
 Verify request summary. Here you can also choose to download the template parameterized json file in order to store for future reference or even use with theAzure Command Line Interface:
 
-4. Deploy
+### 4. Deploy
 
+![Deploy step](images/step4.png)
 
 
 Buy and deploy. Here you will be presented with Hazelcast Terms of use and privacy policy and upon agreement your Hazelcast Cluster will begin deployment:
 
+### Inside the deployment
 If you wish to investigate the deployment on any of the nodes simply login using the credentials you configured. Once you login to a node you can observe the waagent in action. waagent (Microsoft Azure Linux Agent) begins the orchestration for the downloading, configuration, and startup of Hazelcast.
 
-Inside the deployment
 
 Once the installation is completed you’ll observe a process id as the final statement in the waagent.log located:
 
@@ -63,11 +81,12 @@ So what just happened? waagent downloaded and invoked the Hazelcast solution tem
 
 bootstrap
 
-Created environment variables
-Calls install_hazelcast
-Calls modify_configuration
-Starts a service named hazelcast-server
-Post Deployment
+- Created environment variables
+- Calls install_hazelcast
+- Calls modify_configuration
+- Starts a service named hazelcast-server
+
+### Post Deployment
 
 In the event you wish to start or stop hazelcast-server use the service command:
 
@@ -76,6 +95,4 @@ service hazelcast-server start
 The log is located: /var/log/hazelcast-upstart.log
 
 You know the server is ready once see the STARTED message:
-
-
 
